@@ -4,7 +4,8 @@
     background-color: rgb(219, 154, 122);
     width: 20%;
     height: 100vh;
-    border-right: 5px solid rgb(243, 98, 26);;
+    border-right: 5px solid rgb(243, 98, 26);
+    margin-bottom: 0px;
 }
 
 .item-lista{
@@ -23,6 +24,7 @@
 @media (max-width: 910px) {
     .lista{
         width: 0%;
+        border:0px;
         overflow: hidden;
     }
   }

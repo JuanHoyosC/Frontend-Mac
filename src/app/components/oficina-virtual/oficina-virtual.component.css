@@ -3,8 +3,13 @@ body{
 }
 
 .container{
-    width: 80%; 
+    width: 80%;
     float: left;
+}
+
+.correos{
+    height: 200px;
+    overflow-y: scroll;
 }
 
 @media (max-width: 910px) {

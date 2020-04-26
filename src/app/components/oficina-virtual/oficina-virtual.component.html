@@ -8,17 +8,18 @@
 </head>
 
 <body>
-    <div class="alert alert-danger text-center" role="alert" *ngIf="mostrarAlerta">
-        {{alerta}}
-    </div>
+
 
     <app-navbar></app-navbar>
-
 
     <app-menu-vertical></app-menu-vertical>
 
 
     <div class="container">
+        <div class="alert alert-danger text-center" role="alert" *ngIf="mostrarAlerta">
+            {{alerta}}
+        </div>
+        
         <div class="informacion-usuario mt-5 mx-auto border p-2">
             <div class="row mx-auto">
                 <div class="col-md-6">
@@ -57,7 +58,7 @@
                     </div>
                 </form>
 
-                <div class="card" style="width: 18rem;" class="correos mt-5">
+                <div class="card correos mt-5" style="width: 100%;">
                     <ul class="list-group list-group-flush pl-0" *ngFor="let correo of correos; index as i">
                         <li class="list-group-item p-1 border">{{correo}}
                             <i class="fas fa-minus-circle text-dark ml-2" style="cursor: pointer;"
@@ -66,7 +67,7 @@
                     </ul>
                 </div>
 
-                <input type="button" value="Registrar correos" class="btn btn-primary mt-2" *ngIf="registrar"
+                <input type="button" value="Registrar correos" class="btn btn-primary my-2" *ngIf="registrar"
                     (click)="registrarCorreos()">
             </div>
         </div>
