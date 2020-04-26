@@ -1,0 +1,28 @@
+
+.lista {
+    float: left;
+    background-color: rgb(219, 154, 122);
+    width: 20%;
+    height: 100vh;
+    border-right: 5px solid rgb(243, 98, 26);;
+}
+
+.item-lista{
+    color: black;
+    font-size: 20px;
+    list-style: none;
+}
+
+.item-lista:hover{
+    background-color: rgb(218, 140, 102);
+    cursor: pointer;
+}
+
+
+
+@media (max-width: 910px) {
+    .lista{
+        width: 0%;
+        overflow: hidden;
+    }
+  }

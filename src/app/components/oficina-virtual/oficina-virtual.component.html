@@ -1,56 +1,79 @@
-<div class="alert alert-danger text-center" role="alert" *ngIf="mostrarAlerta">
-    {{alerta}}
-</div>
-<div class="container">
-    <div class="informacion-usuario mt-5 mx-auto border p-2">
-        <div class="row mx-auto">
-            <div class="col-md-6">
-                <p>Nombre: </p>
-                <p>Rango: </p>
-                <p>ID asociado: </p>
-            </div>
+<!DOCTYPE html>
+<html lang="en">
 
-            <div class="col-md-6">
-                Proximo dia de corte:
-            </div>
-        </div>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="alert alert-danger text-center" role="alert" *ngIf="mostrarAlerta">
+        {{alerta}}
     </div>
 
-    <div class="row mt-5 ">
-        <div class="col-md-8">
-            <div class="card" style="width: 18rem;" class="referidos border">
-                <div class="card-header"> Referidos </div>
-                <ul class="list-group list-group-flush">
-                    <li class="list-group-item">Nombre: Juan | ID: 1234 <i class="fas fa-times-circle text-danger"></i>
-                    </li>
-                    <li class="list-group-item">Dapibus ac facilisis in</li>
-                    <li class="list-group-item">Vestibulum at eros</li>
-                </ul>
-            </div>
-        </div>
+    <app-navbar></app-navbar>
 
-        <div class="col-md-4 mt-5">
-            <form class="form-inline" (submit)="agregarCorreos()">
-                <div class="form-group">
-                    <label for="staticEmail2" class="sr-only">Email</label>
-                    <input type="email" name="correos" [(ngModel)]="usuarios" id="" placeholder="Correos"
-                        class="border border-success p-1 mr-2 mb-2">
-                    <input type="submit" value="Agregar correos" class="btn btn-success">
+
+    <app-menu-vertical></app-menu-vertical>
+
+
+    <div class="container">
+        <div class="informacion-usuario mt-5 mx-auto border p-2">
+            <div class="row mx-auto">
+                <div class="col-md-6">
+                    <p>Nombre: </p>
+                    <p>Rango: </p>
+                    <p>ID asociado: </p>
                 </div>
-            </form>
 
-            <div class="card" style="width: 18rem;" class="correos mt-5">
-                <ul class="list-group list-group-flush pl-0" *ngFor="let correo of correos; index as i">
-                    <li class="list-group-item p-1 border">{{correo}}
-                        <i class="fas fa-minus-circle text-dark ml-2" style="cursor: pointer;"
-                            (click)="eliminarCorreo(i)"></i>
-                    </li>
-                </ul>
+                <div class="col-md-6">
+                    Proximo dia de corte:
+                </div>
+            </div>
+        </div>
+
+        <div class="row mt-5 ">
+            <div class="col-md-8">
+                <div class="card" style="width: 18rem;" class="referidos border">
+                    <div class="card-header"> Referidos </div>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item">Nombre: Juan | ID: 1234 <i
+                                class="fas fa-times-circle text-danger"></i>
+                        </li>
+                        <li class="list-group-item">Dapibus ac facilisis in</li>
+                        <li class="list-group-item">Vestibulum at eros</li>
+                    </ul>
+                </div>
             </div>
 
-            <input type="button" value="Registrar correos" class="btn btn-primary mt-2" *ngIf="registrar"
-                (click)="registrarCorreos()">
+            <div class="col-md-4 mt-5">
+                <form class="form" (submit)="agregarCorreos()">
+                    <div class="form-group">
+                        <label for="staticEmail2" class="sr-only">Email</label>
+                        <input type="email" name="correos" [(ngModel)]="usuarios" id="" placeholder="Correos"
+                            class="border border-success p-1 mr-2 mb-2">
+                        <input type="submit" value="Agregar correos" class="btn btn-success">
+                    </div>
+                </form>
+
+                <div class="card" style="width: 18rem;" class="correos mt-5">
+                    <ul class="list-group list-group-flush pl-0" *ngFor="let correo of correos; index as i">
+                        <li class="list-group-item p-1 border">{{correo}}
+                            <i class="fas fa-minus-circle text-dark ml-2" style="cursor: pointer;"
+                                (click)="eliminarCorreo(i)"></i>
+                        </li>
+                    </ul>
+                </div>
+
+                <input type="button" value="Registrar correos" class="btn btn-primary mt-2" *ngIf="registrar"
+                    (click)="registrarCorreos()">
+            </div>
         </div>
+
     </div>
 
-</div>
+
+</body>
+
+</html>

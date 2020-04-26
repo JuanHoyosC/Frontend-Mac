@@ -12,13 +12,17 @@ import { AppComponent } from './components/app/app.component';
 import { LoginComponent } from './components/login/login.component';
 import { RegistroComponent } from './components/registro/registro.component';
 import { OficinaVirtualComponent } from './components/oficina-virtual/oficina-virtual.component';
+import { MenuVerticalComponent } from './components/menu-vertical/menu-vertical.component';
+import { NavbarComponent } from './components/navbar/navbar.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     RegistroComponent,
-    OficinaVirtualComponent
+    OficinaVirtualComponent,
+    MenuVerticalComponent,
+    NavbarComponent
   ],
   imports: [
     BrowserModule,

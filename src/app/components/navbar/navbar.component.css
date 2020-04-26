@@ -1,0 +1,15 @@
+.navbar {
+    background-color: rgb(219, 154, 122);
+    border-bottom: 5px solid rgb(243, 98, 26);
+}
+
+
+.menu{
+    display: none;
+}
+    
+@media (max-width: 910px) {
+    .menu{
+        display: inline-block;
+    }
+}
