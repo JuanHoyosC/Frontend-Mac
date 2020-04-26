@@ -1,16 +1,21 @@
 <div class="body">
-    <div class="container main-login">     
+    
+    <div class="alert alert-danger text-center" role="alert" *ngIf="mostrarAlerta">
+        {{alerta}}
+    </div>
+
+    <div class="container main-login">
         <form class="form-group formulario-login mx-auto p-3" (submit)="login()">
-            <h4 class = "text-center text-danger mb-3">Iniciar sesión</h4>
+            <h4 class="text-center text-danger mb-3">Iniciar sesión</h4>
 
             <div class="form-group">
-                <input type="email" name ="correo" [(ngModel)] ="user.correo" class="form-control"
-                 placeholder="Correo electronico" autofocus required>
+                <input type="email" name="correo" [(ngModel)]="usuario.correo" class="form-control"
+                    placeholder="Correo electronico" autofocus required>
             </div>
 
             <div class="form-group">
-                <input type="password" name ="clave" [(ngModel)] ="user.clave" class="form-control" 
-                placeholder="Contraseña" required>
+                <input type="password" name="clave" [(ngModel)]="usuario.clave" class="form-control"
+                    placeholder="Contraseña" required>
             </div>
 
             <div class="form-group">

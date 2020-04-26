@@ -1,34 +1,46 @@
 <div class="body">
-    <div class="container main-login">     
-        <form class="form-group formulario-login mx-auto p-3">
-            <h4 class = "text-center text-danger mb-3">Registrarse</h4>
+
+    <div class="alert alert-danger text-center" role="alert" *ngIf ="mostrarAlerta">
+        {{alerta}}
+    </div>
+
+    <div class="container main-login">
+        <form class="form-group formulario-login mx-auto p-3" (submit)="registrar()">
+            <h4 class="text-center text-danger mb-3">Registrarse</h4>
 
             <div class="form-group">
-                <input type="text" class="form-control" placeholder="Nombre" autofocus>
+                <input type="text" class="form-control" name="nombre" [(ngModel)]="usuario.nombre" placeholder="Nombre"
+                    autofocus required>
             </div>
 
             <div class="form-group">
-                <input type="password" class="form-control" placeholder="Contraseña">
+                <input type="password" class="form-control" name="clave" [(ngModel)]="usuario.clave"
+                    placeholder="Contraseña" required>
             </div>
 
             <div class="form-group">
-                <input type="password" class="form-control" placeholder="Confirmar contraseña">
+                <input type="password" class="form-control" name="confirmarClave" [(ngModel)]="usuario.confirmarClave"
+                    placeholder="Confirmar contraseña" required>
             </div>
 
             <div class="form-group">
-                <input type="email" class="form-control" placeholder="Correo electronico">
+                <input type="email" class="form-control" name="correo" [(ngModel)]="usuario.correo"
+                    placeholder="Correo electronico" required>
             </div>
 
             <div class="form-group">
-                <input type="email" class="form-control" placeholder="Confirmar correo electronico">
+                <input type="email" class="form-control" name="confirmarCorreo" [(ngModel)]="usuario.confirmarCorreo"
+                    placeholder="Confirmar correo electronico" required>
             </div>
 
             <div class="form-group">
-                <input type="number" class="form-control" placeholder="Número WhatsApp">
+                <input type="number" class="form-control" name="telefono" [(ngModel)]="usuario.telefono"
+                    placeholder="Número WhatsApp" required>
             </div>
 
             <div class="form-group">
-                <input type="text" class="form-control" placeholder="Lider o asesor">
+                <input type="text" class="form-control" name="iD" [(ngModel)]="usuario.iD"
+                 placeholder="Lider o asesor" required>
             </div>
 
             <div class="form-group">

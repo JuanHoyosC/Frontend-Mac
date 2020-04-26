@@ -4,17 +4,21 @@ import { FormsModule } from '@angular/forms';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 
 import { AuthGuard } from './auth.guard';
+import { LoginAuthGuard } from './login-auth.guard';
+
 import {TokeninterceptorService} from './services/tokeninterceptor.service'
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './components/app/app.component';
 import { LoginComponent } from './components/login/login.component';
 import { RegistroComponent } from './components/registro/registro.component';
+import { OficinaVirtualComponent } from './components/oficina-virtual/oficina-virtual.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
-    RegistroComponent
+    RegistroComponent,
+    OficinaVirtualComponent
   ],
   imports: [
     BrowserModule,
@@ -22,7 +26,7 @@ import { RegistroComponent } from './components/registro/registro.component';
     HttpClientModule,
     AppRoutingModule
   ],
-  providers: [AuthGuard, {provide: HTTP_INTERCEPTORS, useClass: TokeninterceptorService, multi: true}],
+  providers: [AuthGuard, LoginAuthGuard, {provide: HTTP_INTERCEPTORS, useClass: TokeninterceptorService, multi: true}],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
